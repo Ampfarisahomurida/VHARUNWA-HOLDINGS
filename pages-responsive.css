@@ -1,0 +1,9 @@
+@media (max-width:760px){
+  header .nav{height:auto!important;min-height:84px;padding:13px 0;flex-wrap:wrap}
+  header .nav nav{width:100%;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  header .nav nav a:not(.quote){display:inline!important;font-size:10px}
+  .quote{padding:9px 11px;font-size:10px}
+  .hero h1{font-size:clamp(43px,13vw,60px)}
+  .work{grid-template-columns:1fr 1fr}
+  .project{height:220px}
+}

@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description"
+        content="Vharunwa Holdings provides trusted handyman, paving, drainage and civil works across Johannesburg, Pretoria and surrounds."/>
+  <title>Vharunwa Holdings | Built Right. Built to Last.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #10201e;
+      --deep: #0a1614;
+      --lime: #d5ff4f;
+      --sand: #f2efe8;
+      --paper: #fbfaf7;
+      --line: rgba(16, 32, 30, .16);
+      --muted: #60706a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Manrope, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      font: 500 11px/1.2 "DM Mono", monospace;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #7d9186;
+    }
+
+    .topbar {
+      background: var(--deep);
+      color: #b4c5bd;
+      font: 500 11px/1 "DM Mono", monospace;
+      letter-spacing: .08em;
+      padding: 12px 0;
+      text-transform: uppercase;
+    }
+
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar span:last-child {
+      color: var(--lime);
+    }
+
+    header {
+      position: absolute;
+      z-index: 5;
+      inset: 39px 0 auto;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -.04em;
+    }
+
+    .logo-lockup {
+      display: block;
+      width: 224px;
+      height: 44px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .logo-lockup img {
+      display: block;
+      width: 224px;
+      height: auto;
+      transform: translateY(-39px);
+    }
+
+    .mark {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      background: var(--lime);
+      clip-path: polygon(0 0, 100% 0, 100% 38%, 39% 100%, 0 100%);
+    }
+
+    .mark:after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--deep);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg);
+      top: 6px;
+      left: 8px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .links a {
+      opacity: .88;
+      transition: .2s;
+    }
+
+    .links a:hover {
+      color: var(--lime);
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 0 21px;
+      border: none;
+      font: 700 12px/1 Manrope, sans-serif;
+      letter-spacing: .025em;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--deep);
+      background: var(--lime);
+    }
+
+    .btn-dark {
+      color: white;
+      background: var(--ink);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, .5);
+      color: white;
+      background: transparent;
+    }
+
+    .arrow {
+      font-size: 18px;
+      line-height: 0;
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      color: white;
+      background: transparent;
+      font-size: 25px;
+    }
+
+    .hero {
+      min-height: 745px;
+      color: white;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #152724;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 20, 18, .92) 0%, rgba(7, 20, 18, .70) 43%, rgba(7, 20, 18, .18) 100%), linear-gradient(0deg, rgba(7, 20, 18, .40), transparent 50%), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .hero .wrap {
+      position: relative;
+      padding: 164px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns:1fr 230px;
+      gap: 30px;
+      align-items: end;
+    }
+
+    h1 {
+      font: 700 clamp(52px, 7vw, 93px)/.93 "Playfair Display", Georgia, serif;
+      max-width: 720px;
+      margin: 15px 0 24px;
+      letter-spacing: -.055em;
+    }
+
+    h1 em {
+      color: var(--lime);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 505px;
+      color: #d4ded9;
+      margin: 0 0 29px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-side {
+      border-left: 1px solid rgba(255, 255, 255, .3);
+      padding-left: 22px;
+      padding-bottom: 6px;
+    }
+
+    .hero-side strong {
+      display: block;
+      color: var(--lime);
+      font: 500 12px/1.5 "DM Mono";
+    }
+
+    .hero-side p {
+      font-size: 12px;
+      margin: 8px 0 0;
+      line-height: 1.55;
+    }
+
+    .stats {
+      background: var(--lime);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns:repeat(3, 1fr);
+    }
+
+    .stat {
+      min-height: 145px;
+      padding: 30px 27px;
+      border-right: 1px solid rgba(16, 32, 30, .2);
+    }
+
+    .stat:first-child {
+      border-left: 1px solid rgba(16, 32, 30, .2);
+    }
+
+    .stat strong {
+      font: 700 40px/1 "Playfair Display";
+      letter-spacing: -.06em;
+      display: block;
+    }
+
+    .stat span {
+      font: 600 12px/1.4 Manrope;
+    }
+
+    section {
+      padding: 114px 0;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-title {
+      font: 700 clamp(39px, 5vw, 65px)/.98 "Playfair Display", Georgia, serif;
+      letter-spacing: -.05em;
+      margin: 13px 0 0;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: #5c756b;
+    }
+
+    .intro-copy {
+      padding-top: 5px;
+    }
+
+    .intro-copy p {
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0;
+      color: #42534c;
+      max-width: 555px;
+    }
+
+    .trade-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .trade-tags span {
+      border: 1px solid var(--line);
+      padding: 9px 13px;
+      font: 500 11px "DM Mono";
+      color: #466055;
+    }
+
+    .services {
+      background: var(--sand);
+      padding-bottom: 0;
+    }
+
+    .service-list {
+      margin-top: 70px;
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns:70px 1fr 1.2fr 52px;
+      gap: 20px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+      transition: .25s;
+    }
+
+    .service:hover {
+      padding-left: 14px;
+      background: rgba(255, 255, 255, .38);
+    }
+
+    .service-no {
+      color: #789086;
+      font: 500 12px "DM Mono";
+    }
+
+    .service h3 {
+      font-size: 21px;
+      margin: 0;
+      letter-spacing: -.04em;
+    }
+
+    .service p {
+      color: #65736d;
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .service-arrow {
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .services-foot {
+      padding: 25px 0 35px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .projects {
+      padding-bottom: 120px;
+    }
+
+    .projects-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+    }
+
+    .projects-head .btn {
+      margin-bottom: 5px;
+    }
+
+    .project-grid {
+      margin-top: 53px;
+      display: grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      min-height: 286px;
+      background: #31413c;
+    }
+
+    .project:nth-child(1) {
+      grid-column: span 7;
+    }
+
+    .project:nth-child(2) {
+      grid-column: span 5;
+    }
+
+    .project:nth-child(3) {
+      grid-column: span 4;
+    }
+
+    .project:nth-child(4) {
+      grid-column: span 4;
+    }
+
+    .project:nth-child(5) {
+      grid-column: span 4;
+    }
+
+    .project:nth-child(n + 6) {
+      grid-column: span 3;
+      min-height: 245px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .project:hover img {
+      transform: scale(1.06);
+    }
+
+    .project:after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(5, 14, 12, .86));
+    }
+
+    .project-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 20px;
+      left: 20px;
+      color: #fff;
+    }
+
+    .project-info small {
+      display: block;
+      color: var(--lime);
+      font: 500 10px "DM Mono";
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+    }
+
+    .project-info strong {
+      font-size: 17px;
+      letter-spacing: -.04em;
+    }
+
+    .why {
+      background: var(--ink);
+      color: white;
+      padding: 110px 0;
+    }
+
+    .why .eyebrow {
+      color: #a0b4aa;
+    }
+
+    .why .section-title {
+      max-width: 670px;
+    }
+
+    .why .section-title em {
+      color: var(--lime);
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap: 0;
+      margin-top: 65px;
+    }
+
+    .reason {
+      padding: 27px 30px 5px 0;
+      margin-right: 30px;
+      border-top: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .reason:last-child {
+      margin-right: 0;
+    }
+
+    .reason b {
+      display: block;
+      font-size: 19px;
+      margin: 18px 0 10px;
+      letter-spacing: -.04em;
+    }
+
+    .reason p {
+      color: #b7c5bf;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .reason-num {
+      color: var(--lime);
+      font: 500 12px "DM Mono";
+    }
+
+    .contact {
+      padding: 100px 0;
+      background: var(--lime);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns:1.2fr .8fr;
+      gap: 80px;
+    }
+
+    .contact .section-title {
+      font-size: clamp(43px, 5vw, 70px);
+    }
+
+    .contact p {
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 450px;
+    }
+
+    .contact-box {
+      border-left: 1px solid rgba(16, 32, 30, .3);
+      padding-left: 36px;
+      align-self: end;
+    }
+
+    .contact-box a {
+      display: block;
+      font: 700 clamp(20px, 2.4vw, 29px)/1.25 "Playfair Display";
+      letter-spacing: -.04em;
+      margin: 8px 0 20px;
+    }
+
+    .contact-box a:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-box .eyebrow {
+      color: #426156;
+    }
+
+    footer {
+      background: var(--deep);
+      color: #d6dfda;
+      padding: 55px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand p {
+      color: #94a69e;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 285px;
+    }
+
+    .footer-title {
+      color: var(--lime);
+      font: 500 10px "DM Mono";
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 0 0 10px;
+      color: #d5dfd9;
+      font-size: 13px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      padding-top: 18px;
+      color: #82968d;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 34px, 1180px)
+      }
+
+      .logo-lockup {
+        width: 184px;
+        height: 38px
+      }
+
+      .logo-lockup img {
+        width: 184px;
+        transform: translateY(-32px)
+      }
+
+      .topbar span:first-child {
+        display: none
+      }
+
+      header {
+        inset: 38px 0 auto
+      }
+
+      .links {
+        display: none
+      }
+
+      .menu {
+        display: block
+      }
+
+      .hero {
+        min-height: 690px
+      }
+
+      .hero .wrap {
+        padding-bottom: 38px
+      }
+
+      .hero-grid {
+        grid-template-columns:1fr
+      }
+
+      .hero-side {
+        display: none
+      }
+
+      .stat {
+        min-height: 110px;
+        padding: 23px 14px
+      }
+
+      .stat strong {
+        font-size: 30px
+      }
+
+      .stat span {
+        font-size: 10px
+      }
+
+      .intro, .contact-grid {
+        grid-template-columns:1fr;
+        gap: 32px
+      }
+
+      .intro-copy p {
+        font-size: 16px
+      }
+
+      section {
+        padding: 75px 0
+      }
+
+      .service {
+        grid-template-columns:43px 1fr 35px;
+        gap: 10px;
+        padding: 22px 0
+      }
+
+      .service p {
+        display: none
+      }
+
+      .service h3 {
+        font-size: 17px
+      }
+
+      .project-grid {
+        grid-template-columns:1fr 1fr;
+        gap: 10px;
+        margin-top: 33px
+      }
+
+      .project, .project:nth-child(n) {
+        grid-column: span 1;
+        min-height: 200px
+      }
+
+      .project:first-child {
+        grid-column: span 2;
+        min-height: 260px
+      }
+
+      .projects-head {
+        display: block
+      }
+
+      .projects-head .btn {
+        margin-top: 25px
+      }
+
+      .reasons {
+        grid-template-columns:1fr;
+        margin-top: 38px
+      }
+
+      .reason {
+        margin: 0;
+        padding: 21px 0
+      }
+
+      .contact-box {
+        padding: 26px 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(16, 32, 30, .3)
+      }
+
+      .footer-grid {
+        grid-template-columns:1fr 1fr;
+        gap: 28px
+      }
+
+      .footer-brand {
+        grid-column: span 2
+      }
+
+      .copyright {
+        display: block;
+        line-height: 1.8
+      }
+
+      .services-foot {
+        justify-content: start
+      }
+    }
+
+    /* Responsive refinements for compact phones, tablets and wide screens */
+    @media (min-width: 761px) and (max-width: 1050px) {
+      .links { gap: 16px; font-size: 12px; }
+      .btn { padding: 0 15px; }
+      .hero-grid { grid-template-columns: 1fr 180px; }
+      .intro { gap: 45px; }
+    }
+
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 28px); }
+      .topbar { padding: 10px 0; font-size: 9px; }
+      .logo-lockup { width: 158px; height: 34px; }
+      .logo-lockup img { width: 158px; transform: translateY(-28px); }
+      .nav { padding: 15px 0; }
+      .hero { min-height: 620px; }
+      .hero .wrap { padding-top: 142px; }
+      h1 { font-size: clamp(44px, 14vw, 58px); }
+      .hero p { font-size: 14px; }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .actions .btn { width: 100%; }
+      .stat-grid { grid-template-columns: repeat(3, 1fr); }
+      .stat { padding: 20px 8px; }
+      .stat strong { font-size: 27px; }
+      .stat span { font-size: 9px; }
+      .section-title { font-size: 39px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project:first-child, .project, .project:nth-child(n) { grid-column: span 1; min-height: 235px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+      .footer-grid > div { min-width: 0; }
+      .contact-box a { font-size: 19px; overflow-wrap: anywhere; }
+      .links[style*="flex"] { width: min(280px, calc(100vw - 28px)); max-height: calc(100vh - 95px); overflow-y: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap"><span>Professional handyman & civil works</span><span>Johannesburg · Pretoria · Surrounds</span>
+  </div>
+</div>
+<header>
+  <div class="wrap nav"><a class="brand logo-lockup" href="#home" aria-label="Vharunwa Holdings home"><img
+    src="vharunwa-logo.png" alt="Vharunwa Holdings (Pty) Ltd"/></a>
+    <nav class="links"><a href="#services">Services</a><a href="#work">Our Work</a><a href="gallery.html">Gallery</a><a href="#why">Why Us</a><a
+      href="#contact">Contact</a><a class="btn btn-primary" href="#contact">Get a quote <span class="arrow">↗</span></a>
+    </nav>
+    <button class="menu" aria-label="Open navigation">☰</button>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Johannesburg · Pretoria · Surrounds</div>
+          <h1>Built right.<br><em>Built to last.</em></h1>
+          <p>Professional handyman and civil works backed by over 14 years of proven experience—from paving and drainage
+            to complete property improvements.</p>
+          <div class="actions"><a class="btn btn-primary" href="#contact">Get a quote <span class="arrow">↗</span></a><a
+            class="btn btn-outline" href="#work">View our work</a></div>
+        </div>
+        <div class="hero-side"><strong>EST. EXPERIENCE</strong>
+          <p>Craftsmanship that holds up, long after the team leaves site.</p></div>
+      </div>
+    </div>
+  </section>
+  <div class="stats">
+    <div class="wrap stat-grid">
+      <div class="stat"><strong>14+</strong><span>Years experience</span></div>
+      <div class="stat"><strong>9+</strong><span>Service areas</span></div>
+      <div class="stat"><strong>100%</strong><span>Committed to every job</span></div>
+    </div>
+  </div>
+  <section>
+    <div class="wrap intro">
+      <div>
+        <div class="eyebrow">What we do</div>
+        <h2 class="section-title">One team.<br><em>Every trade.</em></h2></div>
+      <div class="intro-copy"><p>Reliable workmanship for homes, offices and rental agencies. We take care of the small
+        fixes and the major builds with equal attention.</p>
+        <div class="trade-tags"><span>Doors, locks & windows</span><span>Electrical & plumbing</span><span>Roofing & waterproofing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="eyebrow">Our services</div>
+      <h2 class="section-title">The work behind<br><em>better spaces.</em></h2>
+      <div class="service-list">
+        <article class="service">
+          <div class="service-no">/01</div>
+          <h3>Painting & Finishes</h3>
+          <p>Interior and exterior painting, fence painting, decking, staining, varnishing and waterproofing.</p>
+          <div class="service-arrow">↗</div>
+        </article>
+        <article class="service">
+          <div class="service-no">/02</div>
+          <h3>Paving & Tiling</h3>
+          <p>Paving, indoor and outdoor tiling, splashbacks, re-grouting and old floor-covering removal.</p>
+          <div class="service-arrow">↗</div>
+        </article>
+        <article class="service">
+          <div class="service-no">/03</div>
+          <h3>Carpentry & Kitchens</h3>
+          <p>Kitchen installations, cupboards, wardrobes, vanities, worktops and appliance fitting.</p>
+          <div class="service-arrow">↗</div>
+        </article>
+        <article class="service">
+          <div class="service-no">/04</div>
+          <h3>Civil & Outdoor Works</h3>
+          <p>Drainage, water pipes, kerbing, retaining walls, fencing, gates, roofing and landscaping.</p>
+          <div class="service-arrow">↗</div>
+        </article>
+      </div>
+      <div class="services-foot"><a class="btn btn-dark" href="#contact">Discuss your project <span
+        class="arrow">↗</span></a></div>
+    </div>
+  </section>
+  <section class="projects" id="work">
+    <div class="wrap">
+      <div class="projects-head">
+        <div>
+          <div class="eyebrow">Selected projects</div>
+          <h2 class="section-title">Work that<br><em>speaks for itself.</em></h2></div>
+        <a class="btn btn-dark" href="#contact">Start a project <span class="arrow">↗</span></a></div>
+      <div class="project-grid">
+        <article class="project"><img
+          src="images/1.jpg"
+          alt="Excavation machinery at a work site">
+          <div class="project-info"><small>Groundworks</small><strong>Site Excavation</strong></div>
+        </article>
+        <article class="project"><img
+          src="images/2.jpg"
+          alt="Modern paved roadside">
+          <div class="project-info"><small>Paving</small><strong>Roadside Paving</strong></div>
+        </article>
+        <article class="project"><img
+          src="images/7.jpg"
+          alt="Pattern paving detail">
+          <div class="project-info"><small>Paving</small><strong>Pattern Paving</strong></div>
+        </article>
+        <article class="project"><img
+          src="images/3.jpg"
+          alt="Construction works">
+          <div class="project-info"><small>Civil Works</small><strong>Kerb Installation</strong></div>
+        </article>
+        <article class="project"><img
+          src="images/19.jpg"
+          alt="Water pipe installation">
+          <div class="project-info"><small>Plumbing</small><strong>Water Pipeline</strong></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="eyebrow">Why Vharunwa</div>
+      <h2 class="section-title">Dependable from<br><em>start to finish.</em></h2>
+      <div class="reasons">
+        <article class="reason"><span class="reason-num">01 /</span><b>Trusted team</b>
+          <p>Carefully screened, skilled people you can trust on your property.</p></article>
+        <article class="reason"><span class="reason-num">02 /</span><b>Proven skill</b>
+          <p>Over 14 years across plumbing, paving, carpentry, painting and civil works.</p></article>
+        <article class="reason"><span class="reason-num">03 /</span><b>Every job matters</b>
+          <p>From one small repair to a complete installation, the standard stays high.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Ready to begin?</div>
+        <h2 class="section-title">Let’s build<br>something solid.</h2>
+        <p>Tell us what you need. We’ll provide a clear, no-obligation quote for your project.</p><a
+        class="btn btn-dark" href="mailto:info@vharunwaholdings.co.za">Get a free quote <span class="arrow">↗</span></a>
+      </div>
+      <div class="contact-box">
+        <div class="eyebrow">Call or email us</div>
+        <a href="tel:+27872233153">+27 87 223 3153</a><a href="tel:+27729859053">+27 72 985 9053</a><a
+        href="mailto:info@vharunwaholdings.co.za">info@vharunwaholdings.co.za</a></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="brand logo-lockup" href="#home" aria-label="Vharunwa Holdings home"><img
+        src="vharunwa-logo.png" alt="Vharunwa Holdings (Pty) Ltd"/></a>
+        <p>Professional handyman and civil works across Johannesburg, Pretoria and surrounds.</p></div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links"><a href="tel:+27872233153">+27 87 223 3153</a><a href="tel:+27729859053">+27 72 985
+          9053</a><a href="mailto:info@vharunwaholdings.co.za">info@vharunwaholdings.co.za</a></div>
+      </div>
+      <div>
+        <div class="footer-title">Navigate</div>
+        <div class="footer-links"><a href="#services">Services</a><a href="#work">Our work</a><a href="gallery.html">Gallery</a><a href="#why">Why
+          us</a><a href="#contact">Contact</a></div>
+      </div>
+    </div>
+    <div class="copyright"><span>© 2026 Vharunwa Holdings (Pty) Ltd. All rights reserved.</span><span>Built for better places.</span>
+    </div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('a[href="#services"]').forEach(a => a.href = 'services.html');
+  document.querySelectorAll('a[href="#work"]').forEach(a => a.href = 'work.html');
+  document.querySelectorAll('a[href="#why"]').forEach(a => a.href = 'why-us.html');
+  document.querySelectorAll('a[href="#contact"]').forEach(a => a.href = 'contact.html');
+  const workImages = [
+    { file: '1.jpg', category: 'Groundworks', title: 'Site Excavation' },
+    { file: '2.jpg', category: 'Paving', title: 'Roadside Paving' },
+    { file: '3.jpg', category: 'Paving', title: 'Pattern Paving' },
+    { file: '4.jpg', category: 'Civil Works', title: 'Kerb Installation' },
+    { file: '5.jpg', category: 'Plumbing', title: 'Water Pipeline' },
+    { file: '6.jpg', category: 'Drainage', title: 'Drainage Installation' }
+  ];
+  const projectGrid = document.querySelector('.project-grid');
+  projectGrid.innerHTML = workImages.map(project => {
+    return `<a class="project" href="gallery.html" aria-label="View ${project.title} in the gallery"><img src="images/${project.file}" alt="Vharunwa Holdings ${project.title}"><div class="project-info"><small>${project.category}</small><strong>${project.title}</strong></div></a>`;
+  }).join('');
+  const menu = document.querySelector('.menu'), links = document.querySelector('.links');
+  menu.addEventListener('click', () => {
+    const open = links.style.display === 'flex';
+    links.style.display = open ? '' : 'flex';
+    if (!open) Object.assign(links.style, {
+      position: 'absolute',
+      top: '70px',
+      right: '17px',
+      background: '#10201e',
+      padding: '20px',
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      minWidth: '190px'
+    });
+  });
+</script>
+</body>
+</html>
