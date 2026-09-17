@@ -11,9 +11,13 @@ module.exports = merge(common, {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'img', to: 'img' },
+        { from: 'images', to: 'images' },
+        { from: '*.html', to: '[name][ext]', globOptions: { ignore: ['**/index.html'] } },
         { from: 'css', to: 'css' },
-        { from: 'js/vendor', to: 'js/vendor' },
+        { from: 'pages.css', to: 'pages.css' },
+        { from: 'pages-responsive.css', to: 'pages-responsive.css' },
+        { from: 'gallery.css', to: 'gallery.css' },
+        { from: 'vharunwa-logo.png', to: 'vharunwa-logo.png' },
         { from: 'icon.svg', to: 'icon.svg' },
         { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
